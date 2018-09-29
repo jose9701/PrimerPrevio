@@ -45,9 +45,9 @@ public class Concesionario extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        Producto = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Marca = new javax.swing.JComboBox<>();
         jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,16 +59,22 @@ public class Concesionario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
         jLabel2.setText("Producto");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Producto", "Carro", "Moto" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        Producto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Producto", "Carro", "Moto" }));
+        Producto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                ProductoActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Marca");
+
+        Marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MarcaActionPerformed(evt);
+            }
+        });
 
         jToggleButton1.setText("Comprar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -95,8 +101,8 @@ public class Concesionario extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jToggleButton1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(Producto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Marca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,11 +113,11 @@ public class Concesionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addComponent(jToggleButton1)
                 .addGap(35, 35, 35))
@@ -120,44 +126,48 @@ public class Concesionario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        if (this.jComboBox2.getSelectedIndex()==1) {
-            this.jComboBox1.removeAllItems();
-            this.jComboBox1.addItem("Seleccione una marca de Carro");
-            this.jComboBox1.addItem("fiat");
-            this.jComboBox1.addItem("ford");
-        } else if (this.jComboBox2.getSelectedIndex()==2) {
-            this.jComboBox1.removeAllItems();
-            this.jComboBox1.addItem("Seleccione una marca de moto");
-            this.jComboBox1.addItem("Yamaha");
-            this.jComboBox1.addItem("Honda");
+    private void ProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductoActionPerformed
+        if (this.Producto.getSelectedIndex()==1) {
+            this.Marca.removeAllItems();
+            this.Marca.addItem("Seleccione una marca de Carro");
+            this.Marca.addItem("fiat");
+            this.Marca.addItem("ford");
+        } else if (this.Producto.getSelectedIndex()==2) {
+            this.Marca.removeAllItems();
+            this.Marca.addItem("Seleccione una marca de moto");
+            this.Marca.addItem("Yamaha");
+            this.Marca.addItem("Honda");
         } else {
-            this.jComboBox1.removeAllItems();
-            this.jComboBox1.addItem("Seleccione..");
+            this.Marca.removeAllItems();
+            this.Marca.addItem("Seleccione..");
         }
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_ProductoActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        if(this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("Seleccione Producto")){
+        if(this.Producto.getSelectedItem().toString().equalsIgnoreCase("Seleccione Producto")){
             JOptionPane.showMessageDialog(this, "seleccione un Producto que desea comprar");
-        }else if (this.jComboBox2.getSelectedIndex()==1) {
-            if (jComboBox1.getSelectedIndex()==0) {
+        }else if (this.Producto.getSelectedIndex()==1) {
+            if (Marca.getSelectedIndex()==0) {
                 JOptionPane.showMessageDialog(this, "seleccione una marca de carro");
             } else {
-                this.con.ConstruirAuto(this.jComboBox1.getSelectedItem().toString());
+                this.con.ConstruirAuto(this.Marca.getSelectedItem().toString());
                 JOptionPane.showMessageDialog(this, con.devolverAuto());
             }
         } else {
-            if (jComboBox1.getSelectedIndex()==0) {
+            if (Marca.getSelectedIndex()==0) {
                 JOptionPane.showMessageDialog(this, "seleccione una marca de Moto");
             } else {
-                this.con.ConstruirMoto(this.jComboBox1.getSelectedItem().toString());
+                this.con.ConstruirMoto(this.Marca.getSelectedItem().toString());
                 JOptionPane.showMessageDialog(this, con.devolverMoto());
             }
 
         }
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void MarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MarcaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,8 +205,8 @@ public class Concesionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> Marca;
+    private javax.swing.JComboBox<String> Producto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
