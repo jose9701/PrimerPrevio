@@ -9,6 +9,7 @@ import Negocio.ConcesionarioFacade;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -137,11 +138,25 @@ public class Concesionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("carro")) {
-            this.con.ConstruirAuto(this.jComboBox1.getSelectedItem().toString());
-        }else{
-            this.con.ConstruirMoto(this.jComboBox1.getSelectedItem().toString());
+        if(this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("Seleccione Producto")){
+            JOptionPane.showMessageDialog(this, "seleccione un Producto que desea comprar");
+        }else if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("carro")) {
+            if (jComboBox1.getSelectedIndex()==0) {
+                JOptionPane.showMessageDialog(this, "seleccione una marca de carro");
+            } else {
+                this.con.ConstruirAuto(this.jComboBox1.getSelectedItem().toString());
+                JOptionPane.showMessageDialog(this, con.devolverAuto());
+            }
+        } else {
+            if (jComboBox1.getSelectedIndex()==0) {
+                JOptionPane.showMessageDialog(this, "seleccione una marca de Moto");
+            } else {
+                this.con.ConstruirMoto(this.jComboBox1.getSelectedItem().toString());
+                JOptionPane.showMessageDialog(this, con.devolverMoto());
+            }
+
         }
+
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
