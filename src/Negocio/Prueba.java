@@ -12,7 +12,22 @@ package Negocio;
 public class Prueba {
     public static void main(String[] args) {
         ConcesionarioFacade con= new ConcesionarioFacade();
-        con.ConstruirAuto("fiat");
-        con.ConstruirAuto("ford");
+        String construir="moto";
+        String tipo="YaMaHa";
+        if(construir.equalsIgnoreCase("carro")){
+            if(tipo.equalsIgnoreCase("fiat")){
+                con.ConstruirAuto(tipo);
+            }else{
+                con.ConstruirAuto(tipo);
+            }
+        }else{
+            
+            if(tipo.equalsIgnoreCase("Honda")){
+                con.ConstruirMoto(tipo);
+            }else{
+                con.ConstruirMoto(tipo);
+            }
+        }
+        
     }
 }

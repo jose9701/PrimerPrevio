@@ -15,7 +15,7 @@ public class MotoYamaha extends MotoBuilder{
     public void buildMotor() {
         Motor motor = new Motor();
         motor.setNumero(25190);
-        motor.setPotencia("125 cc");
+        motor.setPotencia("14,1 HP");
         moto.setMotor(motor);
     }
 

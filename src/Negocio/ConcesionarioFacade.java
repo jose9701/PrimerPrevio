@@ -11,18 +11,31 @@ package Negocio;
  */
 public class ConcesionarioFacade {
     AutoDirector au;
+    MotoDirector moto;
     public ConcesionarioFacade() {
         au = new AutoDirector();
+        moto= new MotoDirector();
     }
     public void ConstruirAuto(String auto) {
         if (auto.equalsIgnoreCase("fiat")) {
             au.setAutobuilder(new AutoFiat());
             au.constructAuto();
-            System.out.println("se creo el auto fiat");
+            System.out.println(au.getAuto().toString());
         } else {
             au.setAutobuilder(new AutoFord());
             au.constructAuto();
-            System.out.println("se creo el carro ford");
+            System.out.println(au.getAuto().toString());
+        }
+    }
+    public void ConstruirMoto(String moto){
+        if(moto.equalsIgnoreCase("YAMAHA")){
+            this.moto.setMotobuilder(new MotoYamaha());
+            this.moto.constructMoto();
+            System.out.println(this.moto.getMoto().toString());
+        }else{
+            this.moto.setMotobuilder(new MotoHonda());
+            this.moto.constructMoto();
+            System.out.println(this.moto.getMoto().toString());
         }
     }
 }

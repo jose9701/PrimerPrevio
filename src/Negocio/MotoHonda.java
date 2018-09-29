@@ -9,6 +9,24 @@ package Negocio;
  *
  * @author josea
  */
-public class MotoHonda {
+public class MotoHonda extends MotoBuilder{
+
+    @Override
+    public void buildMotor() {
+        Motor motor = new Motor();
+        motor.setNumero(25145);
+        motor.setPotencia("7,8 HP");
+        moto.setMotor(motor);
+    }
+
+    @Override
+    public void buildModelo() {
+        moto.setModelo("Navi");
+    }
+
+    @Override
+    public void buildMarca() {
+        moto.setMarca("Honda");
+    }
     
 }
