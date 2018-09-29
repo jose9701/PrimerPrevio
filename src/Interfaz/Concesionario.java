@@ -121,12 +121,12 @@ public class Concesionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("carro")) {
+        if (this.jComboBox2.getSelectedIndex()==1) {
             this.jComboBox1.removeAllItems();
             this.jComboBox1.addItem("Seleccione una marca de Carro");
             this.jComboBox1.addItem("fiat");
             this.jComboBox1.addItem("ford");
-        } else if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("moto")) {
+        } else if (this.jComboBox2.getSelectedIndex()==2) {
             this.jComboBox1.removeAllItems();
             this.jComboBox1.addItem("Seleccione una marca de moto");
             this.jComboBox1.addItem("Yamaha");
@@ -140,7 +140,7 @@ public class Concesionario extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         if(this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("Seleccione Producto")){
             JOptionPane.showMessageDialog(this, "seleccione un Producto que desea comprar");
-        }else if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("carro")) {
+        }else if (this.jComboBox2.getSelectedIndex()==1) {
             if (jComboBox1.getSelectedIndex()==0) {
                 JOptionPane.showMessageDialog(this, "seleccione una marca de carro");
             } else {
