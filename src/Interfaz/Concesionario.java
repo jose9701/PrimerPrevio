@@ -5,6 +5,7 @@
  */
 package Interfaz;
 
+import Negocio.ConcesionarioFacade;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -16,11 +17,14 @@ import javax.swing.JPanel;
  */
 public class Concesionario extends javax.swing.JFrame {
 
+    ConcesionarioFacade con;
+
     /**
      * Creates new form Concesionario
      */
     public Concesionario() {
         initComponents();
+        con = new ConcesionarioFacade();
         ((JPanel) getContentPane()).setOpaque(false);
         ImageIcon uno = new ImageIcon(this.getClass().getResource("/Imagenes/carros-y-motos.jpg"));
         JLabel fondo = new JLabel();
@@ -43,6 +47,7 @@ public class Concesionario extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +69,13 @@ public class Concesionario extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Marca");
 
+        jToggleButton1.setText("Comprar");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,9 +91,11 @@ public class Concesionario extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jToggleButton1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -97,7 +111,9 @@ public class Concesionario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addComponent(jToggleButton1)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -109,17 +125,24 @@ public class Concesionario extends javax.swing.JFrame {
             this.jComboBox1.addItem("Seleccione una marca de Carro");
             this.jComboBox1.addItem("fiat");
             this.jComboBox1.addItem("ford");
-        }
-        else if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("moto")) {
+        } else if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("moto")) {
             this.jComboBox1.removeAllItems();
             this.jComboBox1.addItem("Seleccione una marca de moto");
             this.jComboBox1.addItem("Yamaha");
             this.jComboBox1.addItem("Honda");
-        }else{
+        } else {
             this.jComboBox1.removeAllItems();
             this.jComboBox1.addItem("Seleccione..");
         }
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        if (this.jComboBox2.getSelectedItem().toString().equalsIgnoreCase("carro")) {
+            this.con.ConstruirAuto(this.jComboBox1.getSelectedItem().toString());
+        }else{
+            this.con.ConstruirMoto(this.jComboBox1.getSelectedItem().toString());
+        }
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,5 +185,6 @@ public class Concesionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
