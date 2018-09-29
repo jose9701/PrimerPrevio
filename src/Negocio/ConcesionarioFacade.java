@@ -9,13 +9,14 @@ package Negocio;
  *
  * @author josea
  */
-public class ConcesionarioFacade {
+public class ConcesionarioFacade implements ConcesionarioInterface{
     AutoDirector au;
     MotoDirector moto;
     public ConcesionarioFacade() {
         au = new AutoDirector();
         moto= new MotoDirector();
     }
+    @Override
     public void ConstruirAuto(String auto) {
         if (auto.equalsIgnoreCase("fiat")) {
             au.setAutobuilder(new AutoFiat());
@@ -27,9 +28,11 @@ public class ConcesionarioFacade {
             
         }
     }
+    @Override
     public String devolverAuto(){
         return au.getAuto().toString();
     }
+    @Override
     public void ConstruirMoto(String moto){
         if(moto.equalsIgnoreCase("YAMAHA")){
             this.moto.setMotobuilder(new MotoYamaha());
@@ -41,6 +44,7 @@ public class ConcesionarioFacade {
             
         }
     }
+    @Override
     public String devolverMoto(){
         return moto.getMoto().toString();
     }

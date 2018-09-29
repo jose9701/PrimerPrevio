@@ -6,6 +6,7 @@
 package Interfaz;
 
 import Negocio.ConcesionarioFacade;
+import Negocio.ConcesionarioInterface;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -18,7 +19,7 @@ import javax.swing.JPanel;
  */
 public class Concesionario extends javax.swing.JFrame {
 
-    ConcesionarioFacade con;
+    ConcesionarioInterface con;
 
     /**
      * Creates new form Concesionario
