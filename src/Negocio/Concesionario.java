@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Negocio;
 
 /**
@@ -10,28 +6,42 @@ package Negocio;
  * @author josea
  */
 public class Concesionario implements ConcesionarioInterface{
-    AutoDirector au;
-    MotoDirector moto;
+    BodegaAuto au;
+    BodegaMoto moto;
+    
+    
+    
     public Concesionario() {
-        au = new AutoDirector();
-        moto= new MotoDirector();
+        au = new BodegaAuto();
+        moto= new BodegaMoto();
     }
+    
+    
     @Override
     public void ConstruirAuto(String auto) {
+        
         if (auto.equalsIgnoreCase("fiat")) {
+            
             au.setAutobuilder(new AutoFiat());
             au.constructAuto();
             
         } else {
+            
             au.setAutobuilder(new AutoFord());
             au.constructAuto();
             
         }
     }
+    
+    
     @Override
     public String devolverAuto(){
         return au.getAuto().toString();
     }
+    
+    
+    
+    
     @Override
     public void ConstruirMoto(String moto){
         if(moto.equalsIgnoreCase("YAMAHA")){

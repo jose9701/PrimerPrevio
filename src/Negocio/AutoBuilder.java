@@ -10,6 +10,7 @@ package Negocio;
  * @author josea
  */
 public  abstract class AutoBuilder {
+    
     protected Auto auto;
 
     public Auto getAuto() {

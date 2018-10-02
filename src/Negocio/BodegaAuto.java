@@ -9,12 +9,14 @@ package Negocio;
  *
  * @author josea
  */
-public class AutoDirector {
+public class BodegaAuto {
 
-    public AutoDirector() {
+    public BodegaAuto() {
     }
  
     private AutoBuilder autobuilder;
+    
+    
     public void constructAuto(){
         autobuilder.crearAuto();
         autobuilder.buildMarca();

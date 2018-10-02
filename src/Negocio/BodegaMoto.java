@@ -9,7 +9,7 @@ package Negocio;
  *
  * @author josea
  */
-public class MotoDirector {
+public class BodegaMoto {
     private MotoBuilder motobuilder;
     public void constructMoto(){
         motobuilder.crearMoto();
