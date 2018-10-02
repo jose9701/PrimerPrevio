@@ -323,12 +323,15 @@ public class Concesionario extends javax.swing.JFrame {
                 String canpuerta = this.labelCanPuertas.getText();
                 int cpuerta = 0;
                 int p = 0;
-                if (canpuerta.equalsIgnoreCase("") || precio.equalsIgnoreCase("")) {
+                if (canpuerta.equalsIgnoreCase("")) {
                     cpuerta = 0;
-                    p = 0;
                 } else {
                     cpuerta = Integer.parseInt(canpuerta);
-                    p = Integer.parseInt(precio);
+                }
+                if(precio.equalsIgnoreCase("")){
+                    p=0;
+                }else{
+                    p=Integer.parseInt(precio);
                 }
                 String modelo = this.labelModelo.getText();
                 String pot = this.labelCilindraje.getText();

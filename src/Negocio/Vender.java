@@ -55,6 +55,10 @@ public class Vender {
         this.mo.add(moto);
     }
     public int totalAPagar(){
+        totalCarros=0;
+        totalMotos=0;
+        totalPagarCarros=0;
+        totalPagarMotos=0;
         totalPagarMotos=recorrerMotos();
         totalPagarCarros=recorrerCarros();
         return totalPagarMotos+totalPagarCarros;
@@ -62,6 +66,7 @@ public class Vender {
     public int recorrerMotos(){
         int total=0;
         for (Moto m:mo){
+            System.out.println("precio moto "+m.getPrecio());
         total+=m.getPrecio();
         totalMotos++;
     }
