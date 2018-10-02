@@ -5,7 +5,6 @@
  */
 package Interfaz;
 
-import Negocio.ConcesionarioFacade;
 import Negocio.ConcesionarioInterface;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -26,7 +25,7 @@ public class Concesionario extends javax.swing.JFrame {
      */
     public Concesionario() {
         initComponents();
-        con = new ConcesionarioFacade();
+        con = new Negocio.Concesionario();
         ((JPanel) getContentPane()).setOpaque(false);
         ImageIcon uno = new ImageIcon(this.getClass().getResource("/Imagenes/carros-y-motos.jpg"));
         JLabel fondo = new JLabel();
@@ -50,6 +49,11 @@ public class Concesionario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         Marca = new javax.swing.JComboBox<>();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel4 = new javax.swing.JLabel();
+        labelCilindraje = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        labelModelo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,7 +61,8 @@ public class Concesionario extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CONCESIONARIO");
 
-        jLabel2.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Producto");
 
         Producto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Producto", "Carro", "Moto" }));
@@ -77,51 +82,92 @@ public class Concesionario extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("Comprar");
+        jToggleButton1.setText("Cargar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel4.setText("Potencia");
+
+        labelCilindraje.setFont(new java.awt.Font("Myanmar Text", 1, 12)); // NOI18N
+        labelCilindraje.setForeground(new java.awt.Color(255, 0, 0));
+
+        jLabel5.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("Modelo");
+
+        labelModelo.setFont(new java.awt.Font("Myanmar Text", 1, 12)); // NOI18N
+        labelModelo.setForeground(new java.awt.Color(255, 0, 0));
+
+        jButton1.setText("Comprar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 87, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(142, 142, 142))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(42, 42, 42)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(labelCilindraje, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Producto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Marca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jToggleButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(208, 208, 208)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
-                .addGap(35, 35, 35))
+                    .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelCilindraje, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -130,12 +176,12 @@ public class Concesionario extends javax.swing.JFrame {
     private void ProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductoActionPerformed
         if (this.Producto.getSelectedIndex()==1) {
             this.Marca.removeAllItems();
-            this.Marca.addItem("Seleccione una marca de Carro");
+            this.Marca.addItem("Seleccione");
             this.Marca.addItem("fiat");
             this.Marca.addItem("ford");
         } else if (this.Producto.getSelectedIndex()==2) {
             this.Marca.removeAllItems();
-            this.Marca.addItem("Seleccione una marca de moto");
+            this.Marca.addItem("Seleccione");
             this.Marca.addItem("Yamaha");
             this.Marca.addItem("Honda");
         } else {
@@ -145,21 +191,34 @@ public class Concesionario extends javax.swing.JFrame {
     }//GEN-LAST:event_ProductoActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        if(this.Producto.getSelectedItem().toString().equalsIgnoreCase("Seleccione Producto")){
-            JOptionPane.showMessageDialog(this, "seleccione un Producto que desea comprar");
+        if(this.Producto.getSelectedIndex()==0){
+            this.labelCilindraje.setText("");
+                this.labelModelo.setText("");
+            JOptionPane.showMessageDialog(this, "seleccione si es carro o moto");
         }else if (this.Producto.getSelectedIndex()==1) {
             if (Marca.getSelectedIndex()==0) {
-                JOptionPane.showMessageDialog(this, "seleccione una marca de carro");
+                this.labelCilindraje.setText("");
+                this.labelModelo.setText("");
+                JOptionPane.showMessageDialog(this, "seleccione la marca del carro");
             } else {
                 this.con.ConstruirAuto(this.Marca.getSelectedItem().toString());
-                JOptionPane.showMessageDialog(this, con.devolverAuto());
+                this.labelCilindraje.setText("");
+                this.labelModelo.setText("");
+                this.labelCilindraje.setText(this.con.devolverPotenciaAuto());
+                this.labelModelo.setText(this.con.DevolverModeloAuto());
+                
             }
         } else {
             if (Marca.getSelectedIndex()==0) {
-                JOptionPane.showMessageDialog(this, "seleccione una marca de Moto");
+                this.labelCilindraje.setText("");
+                this.labelModelo.setText("");
+                JOptionPane.showMessageDialog(this, "seleccione la marca de la moto");
             } else {
+                this.labelCilindraje.setText("");
+                this.labelModelo.setText("");
                 this.con.ConstruirMoto(this.Marca.getSelectedItem().toString());
-                JOptionPane.showMessageDialog(this, con.devolverMoto());
+                this.labelCilindraje.setText(this.con.devolverPotenciaMoto());
+                this.labelModelo.setText(con.DevolverModeloMoto());
             }
 
         }
@@ -208,9 +267,14 @@ public class Concesionario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Marca;
     private javax.swing.JComboBox<String> Producto;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel labelCilindraje;
+    private javax.swing.JLabel labelModelo;
     // End of variables declaration//GEN-END:variables
 }

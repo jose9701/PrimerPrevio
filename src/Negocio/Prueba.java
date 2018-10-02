@@ -11,7 +11,7 @@ package Negocio;
  */
 public class Prueba {
     public static void main(String[] args) {
-        ConcesionarioFacade con= new ConcesionarioFacade();
+        Concesionario con= new Concesionario();
         String construir="moto";
         String tipo="YaMaHa";
         if(construir.equalsIgnoreCase("carro")){

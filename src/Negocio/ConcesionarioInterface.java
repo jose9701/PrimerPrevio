@@ -10,10 +10,21 @@ package Negocio;
  * @author josea
  */
 public interface ConcesionarioInterface {
+
     public void ConstruirAuto(String auto);
+
     public String devolverAuto();
+
     public void ConstruirMoto(String moto);
+
     public String devolverMoto();
-    
-    
+
+    public String devolverPotenciaMoto();
+
+    public String DevolverModeloMoto();
+
+    public String devolverPotenciaAuto();
+
+    public String DevolverModeloAuto();
+
 }

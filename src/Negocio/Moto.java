@@ -17,6 +17,9 @@ public class Moto {
         return modelo;
     }
 
+    public String DevolverPotenciaMotor(){
+        return motor.getPotencia();
+    }
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }

@@ -9,10 +9,10 @@ package Negocio;
  *
  * @author josea
  */
-public class ConcesionarioFacade implements ConcesionarioInterface{
+public class Concesionario implements ConcesionarioInterface{
     AutoDirector au;
     MotoDirector moto;
-    public ConcesionarioFacade() {
+    public Concesionario() {
         au = new AutoDirector();
         moto= new MotoDirector();
     }
@@ -47,5 +47,26 @@ public class ConcesionarioFacade implements ConcesionarioInterface{
     @Override
     public String devolverMoto(){
         return moto.getMoto().toString();
+        
     }
+    @Override
+    public String devolverPotenciaMoto(){
+        return moto.getMoto().DevolverPotenciaMotor();
+    }
+
+    @Override
+    public String DevolverModeloMoto() {
+        return moto.getMoto().getModelo();
+    }
+
+    @Override
+    public String devolverPotenciaAuto() {
+        return au.getAuto().devolverPotencia();
+    }
+
+    @Override
+    public String DevolverModeloAuto() {
+        return au.getAuto().getModelo();
+    }
+    
 }

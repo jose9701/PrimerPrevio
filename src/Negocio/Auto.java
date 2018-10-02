@@ -18,6 +18,9 @@ public class Auto {
     public int getCantidadDePuertas() {
         return cantidadDePuertas;
     }
+    public String devolverPotencia(){
+        return motor.getPotencia();
+    }
 
     public void setCantidadDePuertas(int cantidadDePuertas) {
         this.cantidadDePuertas = cantidadDePuertas;
