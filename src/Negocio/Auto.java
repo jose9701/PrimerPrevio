@@ -14,6 +14,7 @@ public class Auto {
     private String modelo;
     private String marca;
     private Motor motor;
+    private int precio;
 
     public int getCantidadDePuertas() {
         return cantidadDePuertas;
@@ -50,9 +51,16 @@ public class Auto {
         this.motor = motor;
     }
 
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+    
     @Override
     public String toString() {
         return "el modelo del carro es: " + modelo + " y la marca es: " + marca;
     }
-
 }

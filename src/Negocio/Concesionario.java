@@ -68,5 +68,21 @@ public class Concesionario implements ConcesionarioInterface{
     public String DevolverModeloAuto() {
         return au.getAuto().getModelo();
     }
+
+    @Override
+    public String DevolverPrecioMoto() {
+        return ""+ moto.getMoto().getPrecio();
+    }
+
+    @Override
+    public String devolverPrecioAuto() {
+        System.out.println("precio ="+ au.getAuto().getPrecio());
+        return ""+au.getAuto().getPrecio();
+    }
+
+    @Override
+    public String devolverCantidadPuertas() {
+        return ""+au.getAuto().getCantidadDePuertas();
+    }
     
 }

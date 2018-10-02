@@ -13,6 +13,7 @@ public class Moto {
     private String modelo;
     private String marca;
     private Motor motor;
+    private int precio;
     public String getModelo() {
         return modelo;
     }
@@ -44,4 +45,13 @@ public class Moto {
     public String toString() {
         return "el modelo de la moto es: " + modelo + " y la marca es: " + marca;
     }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+    
 }

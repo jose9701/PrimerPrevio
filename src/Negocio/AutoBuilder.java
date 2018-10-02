@@ -27,4 +27,5 @@ public  abstract class AutoBuilder {
     public abstract void buildModelo();
     public abstract void buildMarca();
     public abstract void buildPuertas();
+    public abstract void buidPrecio();
 }

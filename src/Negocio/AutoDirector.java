@@ -10,6 +10,10 @@ package Negocio;
  * @author josea
  */
 public class AutoDirector {
+
+    public AutoDirector() {
+    }
+ 
     private AutoBuilder autobuilder;
     public void constructAuto(){
         autobuilder.crearAuto();
@@ -17,6 +21,7 @@ public class AutoDirector {
         autobuilder.buildModelo();
         autobuilder.buildMotor();
         autobuilder.buildPuertas();
+        autobuilder.buidPrecio();
     }
 
     public AutoBuilder getAutobuilder() {

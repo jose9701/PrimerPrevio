@@ -33,4 +33,9 @@ public class AutoFiat extends AutoBuilder {
     public void buildMarca() {
         auto.setMarca("Fiat");
     }
+
+    @Override
+    public void buidPrecio() {
+        auto.setPrecio(35000000);
+    }
 }

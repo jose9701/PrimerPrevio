@@ -26,5 +26,6 @@ public abstract class MotoBuilder {
     public abstract void buildMotor();
     public abstract void buildModelo();
     public abstract void buildMarca();
+    public abstract void buidPrecio();
     
 }

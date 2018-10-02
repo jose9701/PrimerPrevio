@@ -32,4 +32,9 @@ public class AutoFord extends AutoBuilder {
     public void buildMarca() {
         auto.setMarca("Ford");
     }
+
+    @Override
+    public void buidPrecio() {
+        auto.setPrecio(40000000);
+    }
 }

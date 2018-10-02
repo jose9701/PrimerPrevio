@@ -26,5 +26,8 @@ public interface ConcesionarioInterface {
     public String devolverPotenciaAuto();
 
     public String DevolverModeloAuto();
+    public String DevolverPrecioMoto();
+    public String devolverPrecioAuto();
+    public String devolverCantidadPuertas();
 
 }

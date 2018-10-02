@@ -28,5 +28,10 @@ public class MotoHonda extends MotoBuilder{
     public void buildMarca() {
         moto.setMarca("Honda");
     }
+
+    @Override
+    public void buidPrecio() {
+        moto.setPrecio(18000000);
+    }
     
 }

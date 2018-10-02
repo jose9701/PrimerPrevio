@@ -16,6 +16,7 @@ public class MotoDirector {
         motobuilder.buildMarca();
         motobuilder.buildModelo();
         motobuilder.buildMotor();
+        motobuilder.buidPrecio();
         
     }
 
